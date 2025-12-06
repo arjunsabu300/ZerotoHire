@@ -10,7 +10,7 @@ import adminJobRoutes from "./routes/adminJobs.js";
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "https://zerotohire.onrender.com" }));
 app.use(express.json());
 
 app.get("/api/health", (_req, res) => {
