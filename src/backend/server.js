@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import jobRoutes from "./routes/jobs.js";
 import simulationRoutes from "./routes/simulations.js";
+import candidateRoutes from "./routes/Candidates.js";
+import adminJobRoutes from "./routes/adminJobs.js";
 
 dotenv.config();
 
@@ -17,6 +19,12 @@ app.get("/api/health", (_req, res) => {
 
 app.use("/api/jobs", jobRoutes);
 app.use("/api/simulations", simulationRoutes);
+app.use("/api/candidates", candidateRoutes);
+
+app.use("/api/admin/jobs", adminJobRoutes);
+
+
+
 
 app.use((err, _req, res, _next) => {
   console.error("Unhandled error:", err);
